@@ -185,8 +185,8 @@ export default function Index() {
           {/* ── Extra images row (уникальные, головы не обрезаны) ── */}
           <div className="grid grid-cols-5 gap-2 mb-3">
             {[IMG_CHAT, IMG_BREATH, IMG_TEAMWORK, IMG_DESK, IMG_DOCS].map((src, i) => (
-              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)]" style={{ height: 64 }}>
-                <img src={src} alt="" className="w-full h-full object-cover object-top" />
+              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)]">
+                <img src={src} alt="" className="w-full object-contain" style={{ display: "block", maxHeight: 70 }} />
               </div>
             ))}
           </div>

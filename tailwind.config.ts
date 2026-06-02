@@ -94,7 +94,7 @@ export default {
 				'scale-in': 'scaleIn 0.5s ease forwards',
 			},
 			fontFamily: {
-				golos: ['Golos Text', 'sans-serif'],
+				rubik: ['Rubik', 'sans-serif'],
 				cormorant: ['Cormorant', 'serif'],
 			}
 		}

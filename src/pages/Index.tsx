@@ -3,6 +3,8 @@ import Icon from "@/components/ui/icon";
 const IMG_DESK   = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/938c7077-20bd-46b7-8b80-2c5c27ae6f9b.jpg";
 const IMG_TEAM   = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/f683c107-81e5-4153-abed-078fcf91e5ed.jpg";
 const IMG_BREATH = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/d0f43dbb-65ce-46bd-a39a-95821763e2a9.jpg";
+const IMG_DOCS   = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/6a94b7cb-b68b-4d85-ac1d-215c773064bd.jpg";
+const IMG_FOCUS  = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/3dea499a-dcdb-4ca9-adce-1a05f77ecb60.jpg";
 
 const DIRS = [
   {
@@ -14,7 +16,7 @@ const DIRS = [
     icon: "Building2",
     iconColor: "text-blue",
     iconBg: "bg-blue-soft",
-    image: IMG_DESK,
+    image: IMG_DOCS,
     subtitle: "Внешний каркас",
     items: [
       { icon: "ListChecks", color: "text-blue",     bg: "bg-blue-soft",    title: "Алгоритмизация", body: "Чек-листы и инструкции для каждой сложной задачи. Снижает операциональный стресс (r = 0,72)." },
@@ -48,7 +50,7 @@ const DIRS = [
     icon: "Brain",
     iconColor: "text-sage",
     iconBg: "bg-sage-soft",
-    image: IMG_BREATH,
+    image: IMG_FOCUS,
     subtitle: "Саморегуляция",
     items: [
       { icon: "Wind",   color: "text-sage",     bg: "bg-sage-soft",    title: "Физиологическая регуляция", body: "Дыхание 4-7-8 и мышечная релаксация нейтрализуют нейротизм как базу стресса (r = 0,48)." },
@@ -97,7 +99,7 @@ export default function Index() {
                   <Icon name="HeartPulse" size={11} className="text-blue" />
                 </div>
                 <span className="text-[9px] text-[hsl(220_15%_52%)] uppercase tracking-widest font-medium">
-                  Психологическое заключение · Туристическая организация · 2024
+                  Туристическая организация · 2026
                 </span>
               </div>
               <h1 className="font-cormorant text-[19px] font-bold text-foreground leading-snug">
@@ -174,36 +176,39 @@ export default function Index() {
           {/* ── Conclusion row ── */}
           <div className="divider-rainbow mb-3" />
 
+          {/* ── Extra images row ── */}
+          <div className="grid grid-cols-5 gap-2 mb-3">
+            {[IMG_DESK, IMG_TEAM, IMG_BREATH, IMG_DOCS, IMG_FOCUS].map((src, i) => (
+              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)]">
+                <img src={src} alt="" className="w-full object-cover" style={{ height: 52 }} />
+              </div>
+            ))}
+          </div>
+
           <div className="grid grid-cols-3 gap-3">
             {[
-              { icon: "TrendingDown", color: "text-blue",   bg: "bg-blue-soft",   val: "−40%", label: "ошибок при оформлении", sub: "виз и бронирований" },
-              { icon: "Users",        color: "text-sage",   bg: "bg-sage-soft",   val: "↑",    label: "качество сервиса", sub: "«социальный фасад» сохраняется" },
-              { icon: "Sparkles",     color: "text-coral",  bg: "bg-coral-soft",  val: "→",    label: "тревожность → продуктивность", sub: "чувствительность как актив" },
+              { icon: "TrendingDown", color: "text-blue",  bg: "bg-blue-soft",  label: "Снижение ошибок при оформлении виз и бронирований", sub: "за счёт алгоритмизации и микропауз" },
+              { icon: "Users",        color: "text-sage",  bg: "bg-sage-soft",  label: "Улучшение качества сервиса", sub: "«социальный фасад» сохраняется" },
+              { icon: "Sparkles",     color: "text-coral", bg: "bg-coral-soft", label: "Тревожность → продуктивность", sub: "чувствительность как профессиональный актив" },
             ].map((o) => (
-              <div key={o.label} className="rounded-xl px-3 py-2.5 shadow-sm border border-[hsl(207_60%_88%)] flex items-center gap-3" style={{ background: "hsl(0 0% 100% / 0.75)" }}>
-                <div className={`w-8 h-8 rounded-xl ${o.bg} flex items-center justify-center flex-shrink-0`}>
-                  <Icon name={o.icon} size={16} className={o.color} fallback="Star" />
+              <div key={o.label} className="rounded-xl px-3 py-2.5 shadow-sm border border-[hsl(207_60%_88%)] flex items-start gap-2.5" style={{ background: "hsl(0 0% 100% / 0.75)" }}>
+                <div className={`w-7 h-7 rounded-lg ${o.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                  <Icon name={o.icon} size={14} className={o.color} fallback="Star" />
                 </div>
                 <div>
-                  <span className={`font-cormorant text-xl font-bold ${o.color} leading-none`}>{o.val}</span>
-                  <p className="text-[10px] font-semibold text-foreground leading-none mt-0.5">{o.label}</p>
-                  <p className="text-[9px] text-[hsl(220_15%_52%)]">{o.sub}</p>
+                  <p className={`text-[10px] font-semibold ${o.color} leading-snug`}>{o.label}</p>
+                  <p className="text-[9px] text-[hsl(220_15%_52%)] mt-0.5">{o.sub}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Footer */}
-          <div className="mt-3 pt-2.5 border-t border-[hsl(30_15%_88%)] flex items-center justify-between">
+          <div className="mt-3 pt-2.5 border-t border-[hsl(207_50%_85%)] flex items-center justify-between">
             <span className="text-[9px] text-[hsl(220_15%_60%)]">
-              Составлено на основе факторного и корреляционного анализа · Конфиденциально
+              Составлено на основе факторного и корреляционного анализа · Туристическая организация
             </span>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-3 rounded-sm bg-blue-soft flex items-center justify-center">
-                <Icon name="HeartPulse" size={7} className="text-blue" />
-              </div>
-              <span className="text-[9px] text-[hsl(220_15%_60%)]">АнтиСтресс · 2024</span>
-            </div>
+            <span className="text-[9px] text-[hsl(220_15%_60%)]">2026</span>
           </div>
 
         </div>

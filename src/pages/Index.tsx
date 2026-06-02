@@ -1,10 +1,16 @@
 import Icon from "@/components/ui/icon";
 
-const IMG_DESK   = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/938c7077-20bd-46b7-8b80-2c5c27ae6f9b.jpg";
-const IMG_TEAM   = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/f683c107-81e5-4153-abed-078fcf91e5ed.jpg";
-const IMG_BREATH = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/d0f43dbb-65ce-46bd-a39a-95821763e2a9.jpg";
-const IMG_DOCS   = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/6a94b7cb-b68b-4d85-ac1d-215c773064bd.jpg";
-const IMG_FOCUS  = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/3dea499a-dcdb-4ca9-adce-1a05f77ecb60.jpg";
+// Картинки для колонок (сверху)
+const IMG_RECEPTION = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/d78d67e9-1677-406a-aa0f-5b05b0aa3d6f.jpg";
+const IMG_TEAM      = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/f683c107-81e5-4153-abed-078fcf91e5ed.jpg";
+const IMG_FOCUS     = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/3dea499a-dcdb-4ca9-adce-1a05f77ecb60.jpg";
+
+// Картинки для нижней галереи (другие, не повторяются)
+const IMG_CHAT      = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/66c4da18-40c0-43a0-89e2-62f2b34aaaef.jpg";
+const IMG_BREATH    = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/7b43af7a-60a0-420b-bf30-de6e1bf493c8.jpg";
+const IMG_TEAMWORK  = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/fb0f6e04-2206-48b8-9bff-d7b53a0d5be5.jpg";
+const IMG_DESK      = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/938c7077-20bd-46b7-8b80-2c5c27ae6f9b.jpg";
+const IMG_DOCS      = "https://cdn.poehali.dev/projects/ac488391-bda5-46a2-98e4-d4fe9adec63c/files/6a94b7cb-b68b-4d85-ac1d-215c773064bd.jpg";
 
 const DIRS = [
   {
@@ -16,7 +22,7 @@ const DIRS = [
     icon: "Building2",
     iconColor: "text-blue",
     iconBg: "bg-blue-soft",
-    image: IMG_DOCS,
+    image: IMG_RECEPTION,
     subtitle: "Внешний каркас",
     items: [
       { icon: "ListChecks", color: "text-blue",     bg: "bg-blue-soft",    title: "Алгоритмизация", body: "Чек-листы и инструкции для каждой сложной задачи. Снижает операциональный стресс (r = 0,72)." },
@@ -176,11 +182,11 @@ export default function Index() {
           {/* ── Conclusion row ── */}
           <div className="divider-rainbow mb-3" />
 
-          {/* ── Extra images row ── */}
+          {/* ── Extra images row (уникальные, головы не обрезаны) ── */}
           <div className="grid grid-cols-5 gap-2 mb-3">
-            {[IMG_DESK, IMG_TEAM, IMG_BREATH, IMG_DOCS, IMG_FOCUS].map((src, i) => (
-              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)]">
-                <img src={src} alt="" className="w-full object-cover" style={{ height: 52 }} />
+            {[IMG_CHAT, IMG_BREATH, IMG_TEAMWORK, IMG_DESK, IMG_DOCS].map((src, i) => (
+              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)]" style={{ height: 64 }}>
+                <img src={src} alt="" className="w-full h-full object-cover object-top" />
               </div>
             ))}
           </div>

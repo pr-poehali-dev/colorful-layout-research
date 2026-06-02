@@ -82,7 +82,7 @@ export default function Index() {
       </div>
 
       {/* A4 Sheet */}
-      <div className="a4-page font-rubik" style={{ padding: 0 }}>
+      <div className="a4-page font-rubik" style={{ padding: 0, background: "hsl(207 70% 96%)" }}>
 
         {/* Rainbow stripe */}
         <div className="a4-header-stripe" />
@@ -100,8 +100,8 @@ export default function Index() {
                   Психологическое заключение · Туристическая организация · 2024
                 </span>
               </div>
-              <h1 className="font-cormorant text-[22px] font-bold text-foreground leading-tight">
-                Профилактика стресса: три направления
+              <h1 className="font-cormorant text-[19px] font-bold text-foreground leading-snug">
+                Профилактика стрессовых состояний персонала в организации как проблема психологического консультирования
               </h1>
               <p className="text-[10px] text-[hsl(220_15%_52%)] mt-0.5 leading-snug max-w-lg">
                 Стандартные тимбилдинги неэффективны. ППН детерминирован личностными особенностями.
@@ -112,7 +112,7 @@ export default function Index() {
             {/* Stats mini row */}
             <div className="flex gap-2 ml-4">
               {STATS.map((s) => (
-                <div key={s.label} className="text-center bg-white rounded-xl px-2.5 py-1.5 shadow-sm border border-[hsl(30_15%_90%)]" style={{ minWidth: 52 }}>
+                <div key={s.label} className="text-center rounded-xl px-2.5 py-1.5 shadow-sm border border-[hsl(207_60%_88%)]" style={{ minWidth: 52, background: "hsl(0 0% 100% / 0.8)" }}>
                   <div className={`font-cormorant text-[17px] font-bold leading-none ${s.color}`}>{s.val}</div>
                   <div className="text-[8px] text-[hsl(220_15%_52%)] leading-tight mt-0.5">{s.label}</div>
                 </div>
@@ -124,7 +124,7 @@ export default function Index() {
           <div className="divider-rainbow mb-3" />
 
           {/* ── Key finding banner ── */}
-          <div className="flex items-start gap-2 bg-[hsl(210_65%_42%/0.06)] border-l-[3px] border-l-[hsl(210_65%_42%)] rounded-r-xl px-3 py-2 mb-4">
+          <div className="flex items-start gap-2 border-l-[3px] border-l-[hsl(210_65%_42%)] rounded-r-xl px-3 py-2 mb-4" style={{ background: "hsl(210 65% 42% / 0.08)" }}>
             <Icon name="Lightbulb" size={14} className="text-blue flex-shrink-0 mt-0.5" />
             <p className="text-[10.5px] text-foreground leading-snug">
               <strong>Ключевой вывод:</strong> высокий ППН обусловлен нейротизмом (r = 0,48), личностной тревожностью (r = 0,83) и эмотивностью (r = 0,57).
@@ -139,7 +139,7 @@ export default function Index() {
 
                 {/* Direction header */}
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-[hsl(30_15%_90%)]">
-                  <img src={dir.image} alt={dir.subtitle} className="w-full object-cover" style={{ height: 68 }} />
+                  <img src={dir.image} alt={dir.subtitle} className="w-full object-cover" style={{ height: 110 }} />
                   <div className="px-3 pt-2 pb-2.5">
                     <div className="flex items-center gap-1.5 mb-1">
                       <span className={`font-cormorant text-[13px] font-bold leading-none ${dir.numColor} opacity-30`}>{dir.num}</span>
@@ -153,7 +153,8 @@ export default function Index() {
                 {dir.items.map((item, i) => (
                   <div
                     key={i}
-                    className={`bg-white rounded-xl px-3 py-2.5 shadow-sm border border-[hsl(30_15%_90%)] ${dir.accent}`}
+                    className={`rounded-xl px-3 py-2 shadow-sm border border-[hsl(207_60%_88%)] ${dir.accent}`}
+                    style={{ background: "hsl(0 0% 100% / 0.75)" }}
                   >
                     <div className="flex items-start gap-2">
                       <div className={`w-6 h-6 rounded-lg ${item.bg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
@@ -179,7 +180,7 @@ export default function Index() {
               { icon: "Users",        color: "text-sage",   bg: "bg-sage-soft",   val: "↑",    label: "качество сервиса", sub: "«социальный фасад» сохраняется" },
               { icon: "Sparkles",     color: "text-coral",  bg: "bg-coral-soft",  val: "→",    label: "тревожность → продуктивность", sub: "чувствительность как актив" },
             ].map((o) => (
-              <div key={o.label} className="bg-white rounded-xl px-3 py-2.5 shadow-sm border border-[hsl(30_15%_90%)] flex items-center gap-3">
+              <div key={o.label} className="rounded-xl px-3 py-2.5 shadow-sm border border-[hsl(207_60%_88%)] flex items-center gap-3" style={{ background: "hsl(0 0% 100% / 0.75)" }}>
                 <div className={`w-8 h-8 rounded-xl ${o.bg} flex items-center justify-center flex-shrink-0`}>
                   <Icon name={o.icon} size={16} className={o.color} fallback="Star" />
                 </div>

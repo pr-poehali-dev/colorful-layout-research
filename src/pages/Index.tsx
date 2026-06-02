@@ -182,11 +182,11 @@ export default function Index() {
           {/* ── Conclusion row ── */}
           <div className="divider-rainbow mb-3" />
 
-          {/* ── Extra images row (уникальные, головы не обрезаны) ── */}
-          <div className="grid grid-cols-5 gap-2 mb-3">
-            {[IMG_CHAT, IMG_BREATH, IMG_TEAMWORK, IMG_DESK, IMG_DOCS].map((src, i) => (
-              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)]">
-                <img src={src} alt="" className="w-full object-contain" style={{ display: "block", maxHeight: 70 }} />
+          {/* ── Extra images row (уникальные, без обрезки) ── */}
+          <div className="grid grid-cols-3 gap-2 mb-3">
+            {[IMG_CHAT, IMG_TEAMWORK, IMG_BREATH].map((src, i) => (
+              <div key={i} className="rounded-xl overflow-hidden shadow-sm border border-[hsl(207_60%_88%)] bg-white flex items-center justify-center" style={{ height: 90 }}>
+                <img src={src} alt="" style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", display: "block" }} />
               </div>
             ))}
           </div>
